@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Game from './Components/Game.js';
+
 class App extends Component {
   render() {
     return (
@@ -11,8 +13,10 @@ class App extends Component {
           <h1 className="App-title">Tic-Tac-Toe</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Top-down 2D rogue-like game, not for the faint of heart. <span role="img" aria-label="Smirk">😏</span><br/>
+          Single player version.
         </p>
+        <Game/>
       </div>
     );
   }
