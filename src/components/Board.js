@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import Square from './Square'
 
 class Board extends Component {
-  renderSquare() {
-    return <Square />
+  renderSquare(val) {
+    return <Square val={val} />
   }
 
   render() {

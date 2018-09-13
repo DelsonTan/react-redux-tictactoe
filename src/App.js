@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 
 import Game from './components/Game.js'
+import Score from './components/Score.js'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           Single player version.
         </p>
         <Game />
+        <Score />
       </div>
     )
   }
