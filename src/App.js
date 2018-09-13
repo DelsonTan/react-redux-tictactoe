@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import logo from './logo.svg'
 import './App.css'
-
-import Game from './components/Game.js'
+import Board from './components/Board.js'
 import Score from './components/Score.js'
 
 class App extends Component {
@@ -14,14 +13,12 @@ class App extends Component {
           <h1 className="App-title">Tic-Tac-Toe</h1>
         </header>
         <p className="App-intro">
-          Top-down 2D rogue-like game, not for the faint of heart.{' '}
+          The unwinnable game{' '}
           <span role="img" aria-label="Smirk">
             😏
           </span>
-          <br />
-          Single player version.
         </p>
-        <Game />
+        <Board />
         <Score />
       </div>
     )
