@@ -4,15 +4,3 @@ body {
   font-family: sans-serif;
   background-color: darkgrey
 }
-
-.Square {
-  font-size: 5em;
-  color: darkred;
-  height: 2em;
-  width: 2em; 
-  padding: 0.5em;
-  border: 0.1em #505c5f solid;
-  border-radius: 0.2em;
-  text-align: center;
-  background-color: black;
-}
