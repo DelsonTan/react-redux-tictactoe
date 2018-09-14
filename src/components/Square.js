@@ -21,13 +21,12 @@ const Cross = styled(Mark)`
 
 class Square extends Component {
   render() {
-    const rand = Math.random()
-    if (rand <= 0.33) {
+    if (this.props.val === 'O') {
       return <Nought>O</Nought>
-    } else if (rand > 0.33 && rand <= 0.66) {
+    } else if (this.props.val === 'X') {
       return <Cross>X</Cross>
     } else {
-      return <Mark />
+      return <Mark onClick={() => this.props.onClick(this.props.index)} />
     }
   }
 }

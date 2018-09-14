@@ -5,6 +5,28 @@ import Board from './components/Board.js'
 import Score from './components/Score.js'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      turn: 1,
+      squares: [null, null, null, null, null, null, null, null, null]
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(i) {
+    const squares = this.state.squares.slice()
+    if (this.state.turn % 2 !== 0) {
+      squares[i] = 'X'
+    } else {
+      squares[i] = 'O'
+    }
+    this.setState({
+      turn: this.state.turn + 1,
+      squares: squares
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -18,7 +40,7 @@ class App extends Component {
             😏
           </span>
         </p>
-        <Board />
+        <Board squares={this.state.squares} onClick={this.handleClick} />
         <Score />
       </div>
     )

@@ -1,6 +1,6 @@
-// import {createStore, applyMiddleware} from 'redux'
-// import reducer from './reducers'
+import {createStore, applyMiddleware} from 'redux'
+import reducer from './reducers'
 
-// const middleware = applyMiddleware()
+const middleware = applyMiddleware()
 
-// export default createStore(reducer, middleware)
+export default createStore(reducer, middleware)
