@@ -9,7 +9,7 @@ const Mark = styled.button`
   padding: 0.5em;
   border: 0.1em #505c5f solid;
   text-align: center;
-  background-color: black;
+  background-color: #222;
 `
 
 const Nought = styled(Mark)`

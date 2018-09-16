@@ -1,25 +1,32 @@
 import React, {Component} from 'react'
+import styled from 'styled-components'
+
+const Scoreboard = styled.div`
+  color: #222;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 6rem;
+  background-color: #505c5f;
+  border: 1px solid #222;
+`
+const Cross = styled.span`
+  color: #e04c57;
+`
+
+const Nought = styled.span`
+  color: #79ac5f;
+`
 
 class Score extends Component {
   render() {
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>X:</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>O:</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
+      <Scoreboard>
+        <span>Score</span>
+        <br />
+        <Cross>X: 0 </Cross>
+        <Nought>O: 0 </Nought>
+      </Scoreboard>
     )
   }
 }
