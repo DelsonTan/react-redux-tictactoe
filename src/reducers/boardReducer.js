@@ -51,6 +51,9 @@ const board = (state = initialState, action) => {
         future: []
       }
     }
+    case 'RESTART_GAME': {
+      return initialState
+    }
     default:
       return state
   }

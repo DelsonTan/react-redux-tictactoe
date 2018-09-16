@@ -13,3 +13,7 @@ export const undoMove = () => ({
 export const redoMove = () => ({
   type: 'REDO_MOVE'
 })
+
+export const restartGame = () => ({
+  type: 'RESTART_GAME'
+})
