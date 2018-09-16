@@ -6,3 +6,8 @@ body {
   background-color: darkgrey;
   text-align: center;
 }
+
+:focus {
+  outline-style: none;
+  outline-color: transparent;
+}

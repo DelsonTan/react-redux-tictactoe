@@ -6,9 +6,10 @@ const Scoreboard = styled.div`
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
-  width: 6rem;
+  width: 16rem;
   background-color: #505c5f;
   border: 1px solid #222;
+  font-size: 24px;
 `
 const Cross = styled.span`
   color: #e04c57;
@@ -24,8 +25,7 @@ class Score extends Component {
       <Scoreboard>
         <span>Score</span>
         <br />
-        <Cross>X: 0 </Cross>
-        <Nought>O: 0 </Nought>
+        <Cross>X: 0</Cross> | <Nought>O: 0 </Nought>
       </Scoreboard>
     )
   }
