@@ -5,6 +5,7 @@ import Square from './Square'
 const renderSquare = (val, rowIndex, columnIndex, clickFunc) => {
   return (
     <Square
+      key={parseInt('' + rowIndex + columnIndex, 10)}
       val={val}
       rowIndex={rowIndex}
       columnIndex={columnIndex}
@@ -13,23 +14,19 @@ const renderSquare = (val, rowIndex, columnIndex, clickFunc) => {
   )
 }
 
+const renderRow = (squares, rowIndex, clickFunc) => {
+  const squareRow = []
+  for (let i = 0; i < 3; i++) {
+    squareRow.push(renderSquare(squares[rowIndex][i], rowIndex, i, clickFunc))
+  }
+  return squareRow
+}
+
 const Board = ({squares, makeMove}) => (
   <div className="Board">
-    <div>
-      {renderSquare(squares[0][0], 0, 0, makeMove)}
-      {renderSquare(squares[0][1], 0, 1, makeMove)}
-      {renderSquare(squares[0][2], 0, 2, makeMove)}
-    </div>
-    <div>
-      {renderSquare(squares[1][0], 1, 0, makeMove)}
-      {renderSquare(squares[1][1], 1, 1, makeMove)}
-      {renderSquare(squares[1][2], 1, 2, makeMove)}
-    </div>
-    <div>
-      {renderSquare(squares[2][0], 2, 0, makeMove)}
-      {renderSquare(squares[2][1], 2, 1, makeMove)}
-      {renderSquare(squares[2][2], 2, 2, makeMove)}
-    </div>
+    <div>{renderRow(squares, 0, makeMove)}</div>
+    <div>{renderRow(squares, 1, makeMove)}</div>
+    <div>{renderRow(squares, 2, makeMove)}</div>
   </div>
 )
 
