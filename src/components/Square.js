@@ -19,20 +19,21 @@ const Nought = styled(Mark)`
 const Cross = styled(Mark)`
   color: #e04c57;
 `
-const Square = ({onClick, val, index}) => {
+const Square = ({onClick, val, rowIndex, columnIndex}) => {
   if (val === 'O') {
     return <Nought>O</Nought>
   } else if (val === 'X') {
     return <Cross>X</Cross>
   } else {
-    return <Mark onClick={() => onClick(index)} />
+    return <Mark onClick={() => onClick(rowIndex, columnIndex)} />
   }
 }
 
 Square.propTypes = {
   onClick: PropTypes.func.isRequired,
   val: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired
+  rowIndex: PropTypes.number.isRequired,
+  columnIndex: PropTypes.number.isRequired
 }
 
 export default Square

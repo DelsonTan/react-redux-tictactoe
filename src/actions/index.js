@@ -1,6 +1,7 @@
-export const makeMove = (index) => ({
+export const makeMove = (rowIndex, columnIndex) => ({
   type: 'MAKE_MOVE',
   payload: {
-    index
+    rowIndex,
+    columnIndex
   }
 })

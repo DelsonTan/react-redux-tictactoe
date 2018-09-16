@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  makeMove: (index) => dispatch(makeMove(index))
+  makeMove: (rowIndex, columnIndex) => dispatch(makeMove(rowIndex, columnIndex))
 })
 
 export default connect(
