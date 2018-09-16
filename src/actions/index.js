@@ -5,3 +5,11 @@ export const makeMove = (rowIndex, columnIndex) => ({
     columnIndex
   }
 })
+
+export const undoMove = () => ({
+  type: 'UNDO_MOVE'
+})
+
+export const redoMove = () => ({
+  type: 'REDO_MOVE'
+})

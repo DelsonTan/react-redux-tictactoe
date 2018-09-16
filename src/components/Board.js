@@ -1,6 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Square from './Square'
+import styled from 'styled-components'
+
+const StyledButton = styled.button`
+  margin-top: 1rem;
+  font-size: 24px;
+  width: 6em;
+  background-color: #222;
+  color: #d5c5c8;
+  border: 0.1em #505c5f solid;
+`
 
 const renderSquare = (val, rowIndex, columnIndex, clickFunc) => {
   return (
@@ -22,11 +32,13 @@ const renderRow = (squares, rowIndex, clickFunc) => {
   return squareRow
 }
 
-const Board = ({squares, makeMove}) => (
+const Board = ({squares, makeMove, undoMove, redoMove}) => (
   <div className="Board">
     <div>{renderRow(squares, 0, makeMove)}</div>
     <div>{renderRow(squares, 1, makeMove)}</div>
     <div>{renderRow(squares, 2, makeMove)}</div>
+    <StyledButton onClick={undoMove}>Undo</StyledButton>
+    <StyledButton onClick={redoMove}>Redo</StyledButton>
   </div>
 )
 
