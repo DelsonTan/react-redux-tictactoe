@@ -1,32 +1,12 @@
 import React, {Component} from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Board from './components/Board.js'
-import Score from './components/Score.js'
+
+import Board from './containers/Board'
+import Score from './components/Score'
+import Notification from './components/Notification'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      turn: 1,
-      squares: [null, null, null, null, null, null, null, null, null]
-    }
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick(i) {
-    const squares = this.state.squares.slice()
-    if (this.state.turn % 2 !== 0) {
-      squares[i] = 'X'
-    } else {
-      squares[i] = 'O'
-    }
-    this.setState({
-      turn: this.state.turn + 1,
-      squares: squares
-    })
-  }
-
   render() {
     return (
       <div className="App">
@@ -40,7 +20,8 @@ class App extends Component {
             😏
           </span>
         </p>
-        <Board squares={this.state.squares} onClick={this.handleClick} />
+        <Board />
+        <Notification />
         <Score />
       </div>
     )

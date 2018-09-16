@@ -1,11 +1,27 @@
-export default function reducer(
+const board = (
   state = {
-    turn: 1,
-    squares: [null, null, null, null, null, null, null, null, null]
+    turn: 0,
+    squares: ['', '', '', '', '', '', '', '', '']
   },
   action
-) {
-  if (action.type == 'MARK_NOUGHT') {
-    return {...state, turn: state.turn + 1}
+) => {
+  switch (action.type) {
+    case 'MAKE_MOVE': {
+      const squares = state.squares.slice()
+      if (state.turn % 2 !== 0) {
+        squares[action.payload.index] = 'X'
+      } else {
+        squares[action.payload.index] = 'O'
+      }
+      const turn = state.turn + 1
+      return {
+        turn,
+        squares
+      }
+    }
+    default:
+      return state
   }
 }
+
+export default board

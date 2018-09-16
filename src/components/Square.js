@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Mark = styled.button`
@@ -18,17 +19,20 @@ const Nought = styled(Mark)`
 const Cross = styled(Mark)`
   color: #e04c57;
 `
-
-class Square extends Component {
-  render() {
-    if (this.props.val === 'O') {
-      return <Nought>O</Nought>
-    } else if (this.props.val === 'X') {
-      return <Cross>X</Cross>
-    } else {
-      return <Mark onClick={() => this.props.onClick(this.props.index)} />
-    }
+const Square = ({onClick, val, index}) => {
+  if (val === 'O') {
+    return <Nought>O</Nought>
+  } else if (val === 'X') {
+    return <Cross>X</Cross>
+  } else {
+    return <Mark onClick={() => onClick(index)} />
   }
+}
+
+Square.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  val: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired
 }
 
 export default Square
