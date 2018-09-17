@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import logo from './logo.svg'
 import Board from './containers/Board'
-import Score from './components/Score'
+import Score from './containers/Score'
 import Notification from './components/Notification'
 import styled from 'styled-components'
 
